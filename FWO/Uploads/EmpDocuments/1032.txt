@@ -1,0 +1,10 @@
+SELECT        TblProvince.LocName AS Province, TblDistrict.LocName AS District, TblTehsil.LocName AS Tehsil, TblUnionConcil.LocName AS UC, TblVillageCity.LocName AS Village
+FROM            TblProvince INNER JOIN
+                         TblRegion ON TblProvince.ProvinceID = TblRegion.ProvinceID INNER JOIN
+                         TblDistrict ON TblRegion.RegionID = TblDistrict.RegionID INNER JOIN
+                         TblTehsil ON TblDistrict.DistrictID = TblTehsil.DistrictID INNER JOIN
+                         TblFeildUnit ON TblTehsil.TehsilID = TblFeildUnit.TehsilID INNER JOIN
+                         TblUnionConcil ON TblFeildUnit.FeildUnitID = TblUnionConcil.FeildUnitID INNER JOIN
+                         TblVillageCity ON TblUnionConcil.UnionConcilID = TblVillageCity.UnionConcilID
+WHERE        (TblTehsil.LocName LIKE '%MANSEHRA%')
+ORDER BY Province, District, Tehsil, UC, Village

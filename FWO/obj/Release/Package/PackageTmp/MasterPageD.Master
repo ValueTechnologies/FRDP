@@ -1,0 +1,557 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageD.master.cs" Inherits="FRDP.MasterPageD" %>
+
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <style type="text/css">
+        #busy {
+                width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 666999;
+    top: 0px;
+    left: 0px;
+    opacity: 0.2;
+    /* display: none; */
+    background: url("./images/animb1.jpg");
+    background-size: cover  !important;
+        }
+    </style>
+    <title>FRDP (MIS)</title>
+    <%--====================================================================================================================================CSS Section End--%>
+    <!-- Le styles -->
+
+    <!-- Use new way for google web fonts 
+    http://www.smashingmagazine.com/2012/07/11/avoiding-faux-weights-styles-google-web-fonts -->
+
+    <!-- Headings -->
+  
+    <!-- Text -->
+    <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="plugins/Leaflet/leaflet.ie.css" rel="stylesheet" />
+    <![endif]-->
+   <%-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />--%>
+    <link href="plugins/Leaflet/leaflet.css" rel="stylesheet" />
+    <!-- Core stylesheets do not remove -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/supr-theme/jquery.ui.supr.css" rel="stylesheet" type="text/css" />
+    <link href="css/icons.css" rel="stylesheet" type="text/css" />
+
+    <!-- Plugin stylesheets -->
+    <link href="plugins/misc/qtip/jquery.qtip.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/misc/prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/misc/pnotify/jquery.pnotify.default.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/misc/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+
+    <link href="plugins/forms/inputlimiter/jquery.inputlimiter.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/ibutton/jquery.ibutton.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/uniform/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/tables/dataTables/jquery.dataTables.css" type="text/css"  rel="stylesheet" />
+    <link href="plugins/forms/color-picker/color-picker.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/select/select2.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/validate/validate.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/smartWizzard/smart_wizard.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/gallery/jpages/jPages.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/gallery/pretty-photo/prettyPhoto.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/misc/multiselect/jquery.multiselect.css" type="text/css"  rel="stylesheet" />
+    <link href="plugins/misc/multiselect/jquery.multiselect.filter.css" type="text/css"  rel="stylesheet" />
+    <!-- Main stylesheets -->
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <%--<link rel="shortcut icon" href="images/logo.png" />--%>
+    <link rel="shortcut icon" href="images/favi.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png" />
+
+
+    <%--High Charts CSS--%>
+    <link href="highslide.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        //adding load class to body and hide page
+        document.documentElement.className += 'loadstate';
+    </script>
+
+
+    <%--====================================================================================================================================Script Section End--%>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <%--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>--%>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+   <%-- <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>--%>
+    
+    <script type="text/javascript" src="plugins/flip/flip.js"></script>
+
+    <!-- Charts plugins -->
+    <script type="text/javascript" src="plugins/charts/sparkline/jquery.sparkline.min.js"></script>
+    <!-- Sparkline plugin -->
+    <script type="text/javascript" src="plugins/charts/knob/jquery.knob.js"></script>
+    <!-- Circular sliders and stats -->
+
+    <!-- Misc plugins -->
+
+    <script type="text/javascript" src="plugins/misc/prettify/prettify.js"></script>
+    <script type="text/javascript" src="plugins/misc/fullcalendar/fullcalendar.min.js"></script>
+    <!-- Calendar plugin -->
+    <!-- Code view plugin -->
+    <script type="text/javascript" src="plugins/misc/qtip/jquery.qtip.min.js"></script>
+    <!-- Custom tooltip plugin -->
+    <script type="text/javascript" src="plugins/misc/animated-progress-bar/jquery.progressbar.js"></script>
+    <script type="text/javascript" src="plugins/misc/pnotify/jquery.pnotify.min.js"></script>
+    <script type="text/javascript" src="plugins/misc/totop/jquery.ui.totop.min.js"></script>
+
+    <!-- Search plugin -->
+    <script type="text/javascript" src="plugins/misc/search/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="plugins/misc/search/tipuesearch_data.js"></script>
+    <!-- JSON for searched results -->
+    <script type="text/javascript" src="plugins/misc/search/tipuesearch.js"></script>
+
+    <!-- Form plugins -->
+    <script type="text/javascript" src="plugins/forms/watermark/jquery.watermark.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/elastic/jquery.elastic.js"></script>
+    <script type="text/javascript" src="plugins/forms/inputlimiter/jquery.inputlimiter.1.3.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/maskedinput/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/ibutton/jquery.ibutton.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/uniform/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/stepper/ui.stepper.js"></script>
+    <script type="text/javascript" src="plugins/forms/color-picker/colorpicker.js"></script>
+    <script type="text/javascript" src="plugins/forms/timeentry/jquery.timeentry.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/select/select2.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/dualselect/jquery.dualListBox-1.3.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/tiny_mce/jquery.tinymce.js"></script>
+    <script type="text/javascript" src="plugins/forms/smartWizzard/jquery.smartWizard-2.0.min.js"></script>
+    <script type="text/javascript" src="plugins/gallery/lazy-load/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="plugins/gallery/jpages/jPages.min.js"></script>
+    <script type="text/javascript" src="plugins/gallery/pretty-photo/jquery.prettyPhoto.js"></script>
+    <!-- Fix plugins -->
+    <script type="text/javascript" src="plugins/fix/ios-fix/ios-orientationchange-fix.js"></script>
+
+    <%--=======================================--%>
+        <script type="text/javascript" src="plugins/misc/jspdf/tableExport.js"></script>
+    <script type="text/javascript" src="plugins/misc/jspdf/jquery.base64.js"></script>
+    <script type="text/javascript" src="plugins/misc/jspdf/html2canvas.js"></script>
+    <script type="text/javascript" src="plugins/misc/jspdf/jspdf/libs/sprintf.js"></script>
+    <script type="text/javascript" src="plugins/misc/jspdf/jspdf/jspdf.js"></script>
+    <script type="text/javascript" src="plugins/misc/jspdf/jspdf/libs/base64.js"></script>
+    <%--=======================================--%>
+    <%--<script type="text/javascript" src="highcharts.js"></script>--%>
+<%--    <script type="text/javascript"  src="plugins/misc/Highcharts-4.1.7/js/highcharts.js"></script>--%>
+    <script type="text/javascript" src="plugins/misc/Highstock-2.1.7/js/highstock.js"></script>
+    <script type="text/javascript" src="jquery.highchartTable.js"></script>
+    <script type="text/javascript" src="highslide.min.js"></script>
+    <script type="text/javascript" src="exporting.js"></script>
+
+    <%--==============================================--%>
+    <%--eComboBox--%>
+    <script type="text/javascript" src="js/jquery.eComboBox.js"></script>
+      <%--eComboBox--%>
+
+
+        <!-- Table plugins -->
+<%--    <script  type="text/javascript"  src="plugins/tables/dataTables/jquery.dataTables.min.js"></script>
+    <script  type="text/javascript"  src="plugins/tables/responsive-tables/responsive-long-tables.js"></script>--%>
+        <script  type="text/javascript"  src="plugins/tables/dataTables/media/js/jquery.dataTables.min.js"></script>
+    <!-- Make tables responsive -->
+
+
+
+    <!-- Important Place before main.js  -->
+   <%-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>--%>
+    <%--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>--%>
+    
+       
+   
+
+<%--    <link type="text/css" href="plugins/misc/tooltip/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="plugins/misc/tooltip/jquery-ui.js"></script>--%>
+
+ <script  type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="plugins/misc/jquery-sessionTimeout-master/jquery.sessionTimeout.min.js"></script>
+    <%--<script  type="text/javascript" src="plugins/Leaflet/leaflet.js"></script>--%>
+    <%--<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script> <=============LeafLet--%> 
+<%--        <script type="text/javascript" src="plugins/misc/multiselect/jquery.ui.widget.js"></script>--%>
+            <script  type="text/javascript" src="plugins/misc/multiselect/jquery.multiselect.js"></script>
+    <script  type="text/javascript" src="plugins/misc/multiselect/jquery.multiselect.filter.min.js"></script>
+
+
+
+
+
+    <script type="text/javascript" src="plugins/fix/touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <!-- Unable touch for JQueryUI -->
+
+    <!-- Init plugins -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript"  src="plugins/misc/jquery.PrintArea.js"></script>
+    <!-- Core js functions -->
+
+
+
+
+    <%--====================================================================================================================================Script Section End--%>
+
+
+   <script type="text/javascript">
+       $(document).ready(function () {
+
+           $(function (e) {
+               //e.preventDefault();
+               if ($.cookie('bIsEmployee') == "0") {
+                   $('.bIsEmployee').remove();
+               }
+           });
+
+           $('.btnMarkAttendance').live('click', function (e) {
+               e.preventDefault();
+               $.ajax({
+                   type: "POST",
+                   url: "EmpReg.ashx/?ID=76ǁ"+$.cookie('bIsEmployee') +"ǁ"+ $(this).attr('tg'),
+                   success: function (response) {
+                       alertG("Attendance Marked..!");
+                   }
+               });
+           });
+           
+
+            //$('.MainModule').on('mouseenter', function () {
+            //    //alert($(this).css('margin-top'));
+            //    //$(this).children().css('margin-top', );
+            //    //var position = $(this).position();
+            //    $('.sub').css('top', $(this).css('top'));
+            //    $(this).children().stop(true, true).slideDown(200);
+            //});
+            //$('.MainModule').on('mouseleave', function () {
+            //    $('.sub').stop(true, true).slideUp();
+            //});
+
+            //$(function () {
+            //    $(document).tooltip({
+            //        show: {
+            //            effect: "slideDown",
+            //            delay: 200
+            //        },
+            //        track: true,
+            //        items: "[title]",
+            //        content: function () {
+            //            var element = $(this);
+            //            if (element.is("[title]")) {
+            //                return element.attr("title");
+            //            }
+            //        }
+            //    });
+            //});
+        });
+    </script>
+</head>
+
+<body>
+    <!-- loading animation -->
+    <div id="qLoverlay"></div>
+    <div id="qLbar"></div>
+
+    <div id="header">
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="http://www.valueresources.org/" style="color: #165dad; margin-right: 0px;">
+                        <%--<img src="images/logo.png" alt="" class="image" style="height: 63px; margin-top: -7px;" />--%>
+                        <img src="images/EG.png" alt="" class="image" style="  height: 57px;
+  WIDTH: 205PX;
+  margin-top: -5px;
+  border-radius: 12px;
+  border: 2px solid rgba(170, 170, 170, 1);    background-color: white;" />
+                        <%--Frontier Works Organization FRDP<span class="slogan" style="color: #165dad;">(MIS)</span>--%>
+<%--                        <p style="
+      margin-top: -55px;
+  margin-left: 67px;
+  font-size: 18px;
+  font-weight: bold;
+  COLOR: rgb(233, 33, 36);
+">Frontier Works Organization<br /><span style="
+        color: black;
+">Pakistan</span> (MIS)</p>--%>
+                    </a>
+
+                    <div class="nav-no-collapse">
+                        <ul class="nav">
+                            <li><a href="DB_Employee.aspx"><span class="icon16 icomoon-icon-screen-2"></span>Dashboard</a></li>
+                            <li class="dropdown bIsEmployee">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="icon16 entypo-icon-clock"></span>Attendance
+                                <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="menu">
+                                        <ul>
+                                            <li>
+                                                <a class="btnMarkAttendance" href="#" tg="0"><span class="icon16 entypo-icon-download" ></span>Time In</a>
+                                            </li>
+                                            <li>
+                                                <a class="btnMarkAttendance" href="#" tg="1"><span class="icon16 entypo-icon-upload"></span>Time Out</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"  style=" display:none;">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="icon16 icomoon-icon-mail-3"></span>Messages <span class="notification">8</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="menu">
+                                        <ul class="messages">
+                                            <li class="header"><strong>Messages</strong> (10) emails and (2) PM</li>
+                                            <li>
+                                                <span class="icon"><span class="icon16 icomoon-icon-user-3"></span></span>
+                                                <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Sammy Morerira</strong></a><span class="time">35 min ago</span></span>
+                                                <span class="msg">I have question about new function ...</span>
+                                            </li>
+                                            <li>
+                                                <span class="icon avatar">
+                                                    <%--<img src="images/avatars/avatar1.png" alt="" />--%></span>
+                                                <span class="name"><a data-toggle="modal" href="#myModal1"><strong>George Michael</strong></a><span class="time">1 hour ago</span></span>
+                                                <span class="msg">I need to meet you urgent please call me ...</span>
+                                            </li>
+                                            <li>
+                                                <span class="icon"><span class="icon16 icomoon-icon-mail-3"></span></span>
+                                                <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Ivanovich</strong></a><span class="time">1 day ago</span></span>
+                                                <span class="msg">I send you my suggestion, please look and ...</span>
+                                            </li>
+                                            <li class="view-all"><a href="#">View all messages <span class="icon16 icomoon-icon-arrow-right-8"></span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="nav pull-right usernav">
+                            <li class="dropdown" style="display:none;">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="icon16 icomoon-icon-bell-2"></span><span class="notification">3</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="menu">
+                                        <ul class="notif">
+                                            <li class="header"><strong>Notifications</strong> (3) items</li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="icon"><span class="icon16 icomoon-icon-user-3"></span></span>
+                                                    <span class="event">1 User is registred</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="icon"><span class="icon16 icomoon-icon-comments-4"></span></span>
+                                                    <span class="event">Jony add 1 comment</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="icon"><span class="icon16 icomoon-icon-new-2"></span></span>
+                                                    <span class="event">admin Julia added post</span>
+                                                </a>
+                                            </li>
+                                            <li class="view-all"><a href="#">View all notifications <span class="icon16 icomoon-icon-arrow-right-8"></span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="profile.aspx" class="dropdown-toggle avatar" data-toggle="dropdown">
+
+
+                                   
+
+                                    <img src="Uploads/<%= Convert.ToString(Convert.ToString(((HttpCookie)HttpContext.Current.Request.Cookies["picExt"]).Value)).ToString() %>" alt="User Image" style="border: 1px solid #c4c4c4;height: 30px;" class="image" />
+                                    
+                                    <span class="txt"><%= (Convert.ToString(Convert.ToString(((HttpCookie)HttpContext.Current.Request.Cookies["username"]).Value)).ToString()) %></span>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="menu">
+                                        <ul>
+                                            <li>
+                                                <a href="profile.aspx"><span class="icon16 icomoon-icon-user-3"></span>Edit profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="FAQAddEdit.aspx"><span class="icon16 icomoon-icon-comments-2"></span>Approve comments</a>
+                                            </li>
+                                            <li>
+                                                <a href="AddUser.aspx"><span class="icon16 icomoon-icon-plus-2"></span>Add user</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="LogOut.aspx"><span class="icon16 icomoon-icon-exit"></span>Logout</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.nav-collapse -->
+                </div>
+            </div>
+            <!-- /navbar-inner -->
+        </div>
+        <!-- /navbar -->
+
+    </div>
+    <!-- End #header -->
+
+    <div id="wrapper">
+
+        <!--Responsive navigation button-->
+        <div class="resBtn">
+            <a href="#"><span class="icon16 minia-icon-list-3"></span></a>
+        </div>
+
+        <!--Sidebar collapse button-->
+        <div class="collapseBtn leftbar">
+            <a href="#" class="tipR" title="Hide sidebar"><span class="icon12 minia-icon-layout"></span></a>
+        </div>
+
+        <!--Sidebar background-->
+        <div id="sidebarbg"></div>
+        <!--Sidebar content-->
+        <div id="sidebar">
+
+            <div class="shortcuts">
+                <ul style="height:44px;">
+                    <li><a style="display:none;" href="CommingSoon.aspx" title="Analysis" class="tip"><span class="icon24 icomoon-icon-support"></span></a></li>
+                    <li><a style="display:none;" href="CommingSoon.aspx" title="District Analysis" class="tip"><span class="icon24 icomoon-icon-database"></span></a></li>
+                    <li><a style="display:none;" href="CommingSoon.aspx" title="Head Office statistics" class="tip"><span class="icon24 icomoon-icon-pie-2"></span></a></li>
+                    <li><a style="display:none;" href="profile.aspx" title="Edit Profile" class="tip"><span class="icon24 icomoon-icon-pencil"></span></a></li>
+                </ul>
+            </div>
+            <!-- End search -->
+
+            <div class="sidenav">
+
+                <div class="sidebar-widget" style="margin: -1px 0 0 0;">
+                    <h5 class="title" style="margin-bottom: 0;">&nbsp;</h5>
+                </div>
+                <!-- End .sidenav-widget -->
+
+                <div id="Menu" class="mainnav">
+               
+                    <%= Session["cssmenue"] %>
+                </div>
+            </div>
+            <!-- End sidenav -->
+
+        </div>
+        <!-- End #sidebar -->
+
+        <!--Body content-->
+        <div id="content" class="clearfix">
+            <div class="contentwrapper">
+                <!--Content wrapper-->
+
+                <div class="heading">
+
+                    <h3></h3>
+
+                    <div class="resBtnSearch">
+                        <a href="#"><span class="icon16 icomoon-icon-search-3"></span></a>
+                    </div>
+
+                    <div class="search"  style="display:none;">
+
+                        <form id="searchform" action="search.html">
+                            <input type="text" id="tipue_search_input" class="top-search" placeholder="Search here ..." />
+                            <input type="submit" id="tipue_search_button" class="search-btn" value="" />
+                        </form>
+
+                    </div>
+                    <!-- End search -->
+
+                    <ul class="breadcrumb"  style="display:none;">
+                        <li>You are here:</li>
+                        <li>
+                            <a href="#" class="tip" title="back to dashboard">
+                                <span class="icon16 icomoon-icon-screen-2"></span>
+                            </a>
+                            <span class="divider">
+                                <span class="icon16 icomoon-icon-arrow-right-2"></span>
+                            </span>
+                        </li>
+                        <li id="PagePlace" class="active"></li>
+                    </ul>
+
+                </div>
+                <!-- End .heading-->
+
+
+                <asp:ContentPlaceHolder ID="head" runat="server">
+                </asp:ContentPlaceHolder>
+                <!-- Build page from here: -->
+                <div class="row-fluid">
+
+                    <form id="form1" runat="server">
+                       <%-- <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" CombineScripts="false" ></asp:ScriptManager>
+                         --%>
+                        <%--<asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" CombineScripts="false" ></asp:ToolkitScriptManager>--%>
+                        <%--<div id="busy" style="display:none;	width: 100%;  height: 100%;    position: fixed;    z-index: 666999;    top: 0;    left: 0;    	background: url(./images/patterns/header/3.png) repeat;    	opacity: 0.3;	filter: alpha(opacity=90);"> <div style="width: 500px; height: 480px; position: absolute; top: 35%; left: 35%; margin-top: -80px;  margin-left: -40px; background: url(./images/anim.gif) no-repeat;  z-index: 667999;/* opacity: 0.09; */"></div></div>--%>
+                        <div id="busy" style="display:none;	width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 666999;
+    top: 0;
+    left: 0;
+    /* background: url(../images/patterns/3-1.png) repeat; */
+    background: url(./images/animb1.jpg);
+    opacity: 0.2;
+    filter: alpha(opacity=90);
+    background-size: cover;"> <div style="width: 350px;
+    height: 350px;
+    position: absolute;
+    top: 28%;
+    left: 41%;
+    /* background: url(../images/loaderxx.gif) no-repeat; */
+    opacity: 0.6;
+    background: url(./images/loading.gif) no-repeat;
+    z-index: 667999;"></div></div>
+                        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnablePageMethods="true" CombineScripts="false"></asp:ToolkitScriptManager>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </form>
+
+                </div>
+                <!-- End .row-fluid -->
+                <!--End page -->
+
+            </div>
+            <!-- End contentwrapper -->
+        </div>
+        <!-- End #content -->
+
+    </div>
+    <!-- End #wrapper -->
+
+
+
+</body>
+</html>
+

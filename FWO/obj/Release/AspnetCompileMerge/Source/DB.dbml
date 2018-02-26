@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PPHIDB" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.TblProvince" Member="TblProvinces">
+    <Type Name="TblProvince">
+      <Column Name="ProvinceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="VarChar(250)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.String" DbType="VarChar(8000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblRegion" Member="TblRegions">
+    <Type Name="TblRegion">
+      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProvinceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="VarChar(250)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.String" DbType="VarChar(8000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblCountry" Member="TblCountries">
+    <Type Name="TblCountry">
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="VarChar(250)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.String" DbType="VarChar(8000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tblCountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="strName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strSVGCode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblDistrict" Member="TblDistricts">
+    <Type Name="TblDistrict">
+      <Column Name="DistrictID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="VarChar(250)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.String" DbType="VarChar(8000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblTehsil" Member="TblTehsils">
+    <Type Name="TblTehsil">
+      <Column Name="TehsilID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DistrictID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="VarChar(250)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.String" DbType="VarChar(8000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblFeildUnit" Member="TblFeildUnits">
+    <Type Name="TblFeildUnit">
+      <Column Name="FeildUnitID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TehsilID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="VarChar(250)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.String" DbType="VarChar(8000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblUnionConcil" Member="TblUnionConcils">
+    <Type Name="TblUnionConcil">
+      <Column Name="UnionConcilID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FeildUnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="VarChar(250)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.String" DbType="VarChar(8000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblVillageCity" Member="TblVillageCities">
+    <Type Name="TblVillageCity">
+      <Column Name="VillageCityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnionConcilID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="VarChar(250)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.String" DbType="VarChar(8000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVender_ContactPerson" Member="tblVender_ContactPersons">
+    <Type Name="tblVender_ContactPerson">
+      <Column Name="tblVender_ContactPersonID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tbltblVenderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactPersonName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPersonCNIC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPersonmobileNo1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPersonmobileNo2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPersonPhone1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPersonphone2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPersonemail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPersonAddress" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ContactRemarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMultipleFiles" Member="tblMultipleFiles">
+    <Type Name="tblMultipleFile">
+      <Column Name="tblMultipleFilesID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentTableName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FileTitle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileExt" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="FolderPath" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="dtUploadDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblElecticityMeter" Member="tblElecticityMeters">
+    <Type Name="tblElecticityMeter">
+      <Column Name="tblElecticityMeterID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MeterNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MeterType" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="OwnerName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="tbl_Company_LocationID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MeterReading" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Emp_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmployee" Member="tblEmployees">
+    <Type Name="tblEmployee">
+      <Column Name="tblEmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CNIC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Is_Male" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeptID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DesignationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactNos" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="U_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Qualification" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AppointmentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResignationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="EnteryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnterByEmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Current_Salary" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblinvStore" Member="tblinvStores">
+    <Type Name="tblinvStore">
+      <Column Name="tblinvStoreID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="txtStoreName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LocationsID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="storeInchargeEmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="txtContactNo1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="txtContactNo2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bIsHead" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblHResourcesLocations" Member="TblHResourcesLocations">
+    <Type Name="TblHResourcesLocation">
+      <Column Name="TblHResourcesLocationsID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInvReqMain" Member="tblInvReqMains">
+    <Type Name="tblInvReqMain">
+      <Column Name="tblInvReqMainID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="yearlyNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnterByEmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnterByEmpLocationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnterByEmpShiftID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnteryDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ToStoreID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoreName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInvReqSub" Member="tblInvReqSubs">
+    <Type Name="tblInvReqSub">
+      <Column Name="tblInvReqSubID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tblInvReqMainID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="temID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Quality" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInvIndentMain" Member="tblInvIndentMains">
+    <Type Name="tblInvIndentMain">
+      <Column Name="tblInvIndentMainID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="yearlyNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnterByEmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnterByEmpLocationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnterByEmpShiftID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnteryDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ToStoreID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoreName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Column Name="bIsImportantForSender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="bIsDeletedBySender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IssuedByEmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IssuedByEmpLocationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IssuedByEmpShiftID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IssuedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bIsImportantForIssuer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="bIsDeletedByIssuer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInvIndentSub" Member="tblInvIndentSubs">
+    <Type Name="tblInvIndentSub">
+      <Column Name="tblInvIndentSubID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tblInvIndentMainID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="temID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Quality" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="QuantityIssued" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblHResources" Member="TblHResources">
+    <Type Name="TblHResource">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactNos" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EnteryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubTask_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expertise" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Qualification" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Experience" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="U_ThemeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_Pass" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Repli" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Branch_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Regions" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Distt" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="U_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PO_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Deportment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="enter_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modify_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeptID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DesignationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CNIC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Is_Male" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AppointmentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResignationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CVExtension" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhotoExtension" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Salary" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EMP_Prefix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tblEmpShiftID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAnimalHealthVaccination" Member="tblAnimalHealthVaccinations">
+    <Type Name="tblAnimalHealthVaccination">
+      <Column Name="tblAnimalHealthVaccinationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strAnimalTag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dtDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="strVaccineName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strDieaseName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strDoseRate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strSchedule" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strNotes" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAnimalHealthPhysicalA" Member="tblAnimalHealthPhysicalAs">
+    <Type Name="tblAnimalHealthPhysicalA">
+      <Column Name="tblAnimalHealthPhysicalAID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strAnimalTag" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dtDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="strBodyCondition" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strExcretionType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strFeedIntake" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strProductionCycle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strNotes" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAnimalHealthTPR" Member="tblAnimalHealthTPRs">
+    <Type Name="tblAnimalHealthTPR">
+      <Column Name="tblAnimalHealthTPRID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strAnimalTag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dtDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dTemperarture" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
+      <Column Name="nPlus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nRespiration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="strSicknessType" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAnimalHealthDeworming" Member="tblAnimalHealthDewormings">
+    <Type Name="tblAnimalHealthDeworming">
+      <Column Name="tblAnimalHealthDewormingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strAnimalTag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dtDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="strDeworingType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strDoseRate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strAfterEffects" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAnimalHealthTreatment" Member="tblAnimalHealthTreatments">
+    <Type Name="tblAnimalHealthTreatment">
+      <Column Name="tblAnimalHealthTreatmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strAnimalTag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dtDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="strDiagnose" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strMedicationType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strDoseRate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strRepeatTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strRecoverySession" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strClinicalSigns" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAccType" Member="tblAccTypes">
+    <Type Name="tblAccType">
+      <Column Name="tblAccTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccTypeName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAccChartOfAccount" Member="tblAccChartOfAccounts">
+    <Type Name="tblAccChartOfAccount">
+      <Column Name="tblAccChartOfAccountID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tblAccTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="tbl_CompanyID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ParentId" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="bIsEntryLevel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Repli" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Created" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Modified" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVender" Member="tblVenders">
+    <Type Name="tblVender">
+      <Column Name="tblVenderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VenderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CNIC_CompanyNTN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mobileNo1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mobileno2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phone1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phone2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryVenderContractor" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="tblCompanyID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAnimal" Member="tblAnimals">
+    <Type Name="tblAnimal">
+      <Column Name="ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="at" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="breed" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="age" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="weight" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="offsprings" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dialyMilk" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PurchaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tbl_CompanyID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="photoA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="photoB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="photoC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="photoD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bisOnProduction" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDailyFeedConsumption" Member="tblDailyFeedConsumptions">
+    <Type Name="tblDailyFeedConsumption">
+      <Column Name="tblDailyFeedConsumptionID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dtEntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Tori" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GreenCharah" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Vanda" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Chokar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Oil" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Masala" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Gurh" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Silage" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="tblAnimalID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblHealthChart" Member="tblHealthCharts">
+    <Type Name="tblHealthChart">
+      <Column Name="tblHealthChartID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dtDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tblAnimalID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Cleanliness" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Activeness" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PredominantOutgrowth" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Temprature" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ThanFR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ThanFL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ThanBR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ThanBL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Udder" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ticks" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Horns" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Head" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LegFR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LegFL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LegBR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LegBL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Tail" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FeetNail" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Body" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Urine" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Gobar" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GenitalSecretion" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSlum" Member="tblSlums">
+    <Type Name="tblSlum">
+      <Column Name="tblSlumID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dtSlumSurveyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TblUnionConcilID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="strSlumName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="dtEntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="photoA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="photoB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="photoC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="photoD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="photoE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Caption1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Caption2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Caption3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Caption4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Caption5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOOSC_Temp" Member="tblOOSC_Temps">
+    <Type Name="tblOOSC_Temp">
+      <Column Name="tblOOSC_TempID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="generalInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fatherInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="motherInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="below5above10Info" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="studying" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="notstudying" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EFSWS_Inputs" Member="EFSWS_Inputs">
+    <Type Name="EFSWS_Input">
+      <Column Name="EFSWS_InputsID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Input" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dtDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolRapidAssessmentWebService" Member="SchoolRapidAssessmentWebServices">
+    <Type Name="SchoolRapidAssessmentWebService">
+      <Column Name="SchoolRapidAssessmentWebServiceID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="input" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolAcademicAssessmentWebService" Member="SchoolAcademicAssessmentWebServices">
+    <Type Name="SchoolAcademicAssessmentWebService">
+      <Column Name="SchoolAcademicAssessmentWebServiceID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="input" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolDetailedAssessmentWebService" Member="SchoolDetailedAssessmentWebServices">
+    <Type Name="SchoolDetailedAssessmentWebService">
+      <Column Name="SchoolDetailedAssessmentWebServiceID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="input" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Company" Member="tbl_Companies">
+    <Type Name="tbl_Company">
+      <Column Name="CompanyID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyAbbrivation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyAddress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CompanyPhoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyPhoneNo1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyWebsite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyEstablishmentYear" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyDistrictID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GPS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CompanyLogo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyProvince" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentId" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TblVillageCity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lvl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Login" Member="Logins">
+    <Type Name="Login">
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="User_Group_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Login_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IP_Check" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TblHResourcesID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TableName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="LoginID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCandidate" Member="tblCandidates">
+    <Type Name="tblCandidate">
+      <Column Name="tblCandidateID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CNIC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dtDOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Religion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentAddress" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PermanentAddress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Domicile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCandidate_tblJobRequirement" Member="tblCandidate_tblJobRequirements">
+    <Type Name="tblCandidate_tblJobRequirement">
+      <Column Name="tblCandidate_tblJobRequirementID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tblCandidateID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tblJobRequirementID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="dtDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAC_Year" Member="tblAC_Years">
+    <Type Name="tblAC_Year">
+      <Column Name="Session_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Session_Str" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SessionName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Session_End" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PerBHUGrantedAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInvReqMainVenders" Member="tblInvReqMainVenders">
+    <Type Name="tblInvReqMainVender">
+      <Column Name="tblInvReqMainVendersID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tblInvReqMainID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tblVenderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_cssMenu" Method="sp_cssMenu">
+    <Parameter Name="Emp_Id" Parameter="emp_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_cssMenuResult">
+      <Column Name="Module_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Module_Name" Type="System.String" DbType="VarChar(424)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Group_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cssMenuSub" Method="sp_cssMenuSub">
+    <Parameter Name="Module_ID" Parameter="module_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="User_Group_Id" Parameter="user_Group_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_cssMenuSubResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUserDistricts" Method="spUserDistricts">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spUserDistrictsResult">
+      <Column Name="LocID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LocName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUserInfo" Method="spUserInfo">
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spUserInfoResult">
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactNos" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PO_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Regions" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Distt" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="U_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Deportment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RegisterEmpWithLogin" Method="sp_RegisterEmpWithLogin">
+    <Parameter Name="EMP_Prefix" Parameter="eMP_Prefix" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="EF_Name" Parameter="eF_Name" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="EM_Name" Parameter="eM_Name" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="EL_Name" Parameter="eL_Name" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Domicile" Parameter="domicile" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="CellNo" Parameter="cellNo" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CNIC" Parameter="cNIC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Designation" Parameter="designation" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nCityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedByEmpID" Parameter="createdByEmpID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dtCreatedDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="User_Group_Id" Parameter="user_Group_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DisplayImageExtention" Parameter="displayImageExtention" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.User_Login" Method="User_Login">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EmpName" Parameter="empName" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="Emp_Id" Parameter="emp_Id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="user_Group_ID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="IP_Address" Parameter="iP_Address" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AllowUser" Parameter="allowUser" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblPlace_Insert" Method="sp_tblPlace_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ParentId" Parameter="parentId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tblPlaceID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="Code" Parameter="code" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblinvStore_Insert" Method="sp_tblinvStore_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ParentId" Parameter="parentId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Head" Parameter="head" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tblinvStoreID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="Code" Parameter="code" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RegisterEmpWithLoginForEmployee" Method="sp_RegisterEmpWithLoginForEmployee">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="User_Group_Id" Parameter="user_Group_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TblHResourcesID" Parameter="tblHResourcesID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblInvItems_Insert" Method="sp_tblInvItems_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ParentId" Parameter="parentId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Head" Parameter="head" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tblInvItemsID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="Code" Parameter="code" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MinStockLevel" Parameter="minStockLevel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Menufecturer" Parameter="menufecturer" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(550)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblInvReqMain_Insert" Method="sp_tblInvReqMain_Insert">
+    <Parameter Name="EnterByEmpID" Parameter="enterByEmpID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToStoreID" Parameter="toStoreID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="StoreName" Parameter="storeName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="tblInvReqMainID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="tblInvReqNo" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblInvIndentMain_Insert" Method="sp_tblInvIndentMain_Insert">
+    <Parameter Name="EnterByEmpID" Parameter="enterByEmpID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToStoreID" Parameter="toStoreID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="StoreName" Parameter="storeName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="tblInvIndentMainID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="tblInvIndentNo" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_inv_OrderedList" Method="sp_inv_OrderedList">
+    <ElementType Name="sp_inv_OrderedListResult">
+      <Column Name="tblInvItemsID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ParentId" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Parents" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lvl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fullCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fullCodeName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UpdateDailyMilkProduction" Method="sp_UpdateDailyMilkProduction">
+    <Parameter Name="strAnimalTag" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dMorning" Type="System.Double" DbType="Float" />
+    <Parameter Name="tblAnimalID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="dtEntryDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="bit" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HealthChart_Dashboard" Method="HealthChart_Dashboard">
+    <Parameter Name="DairyFarmID" Parameter="dairyFarmID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="HealthChart_DashboardResult">
+      <Column Name="tblHealthChartID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="dtDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tblAnimalID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Cleanliness" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Activeness" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PredominantOutgrowth" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Temprature" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ThanFR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ThanFL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ThanBR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ThanBL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Udder" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ticks" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Horns" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Head" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LegFR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LegFL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LegBR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LegBL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Tail" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FeetNail" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Body" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Urine" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Gobar" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GenitalSecretion" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_AndroidLocations" Method="sp_AndroidLocations">
+    <ElementType Name="sp_AndroidLocationsResult">
+      <Column Name="District" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tehsil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strSlumName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UC_Coordinates" Method="sp_UC_Coordinates">
+    <Parameter Name="UCid" Parameter="uCid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UCBoundary" Parameter="uCBoundary" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Slum_Coordinates" Method="sp_Slum_Coordinates">
+    <Parameter Name="tblSlumID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SlumBoundary" Parameter="slumBoundary" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SchoolUpdates_ForWebService" Method="SP_SchoolUpdates_ForWebService">
+    <ElementType Name="SP_SchoolUpdates_ForWebServiceResult">
+      <Column Name="tblAssesmentRapidID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="strSchoolName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="TblUnionConcilID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rejected" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Update_Locations_for_Android" Method="sp_Update_Locations_for_Android">
+    <ElementType Name="sp_Update_Locations_for_AndroidResult">
+      <Column Name="DistrictID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="District" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TehsilID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tehsil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnionConcilID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Voucher_SearchLst" Method="sp_Voucher_SearchLst">
+    <Parameter Name="VID" Parameter="vID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Voucher_SearchLstResult">
+      <Column Name="VoucherID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VoucherNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Memo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CheqNo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DrawingDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Modified" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Posted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="VHeader" Type="System.String" DbType="VarChar(22) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblInvItemsMedicine_Insert" Method="sp_tblInvItemsMedicine_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ParentId" Parameter="parentId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Head" Parameter="head" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tblInvItemsID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="Code" Parameter="code" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MinStockLevel" Parameter="minStockLevel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Menufecturer" Parameter="menufecturer" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="GENERIC_NAME" Parameter="gENERIC_NAME" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblInvItemsFixedAssetItem_Insert" Method="sp_tblInvItemsFixedAssetItem_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ParentId" Parameter="parentId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Head" Parameter="head" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tblInvItemsID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="Code" Parameter="code" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Unit" Parameter="unit" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MinStockLevel" Parameter="minStockLevel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Menufecturer" Parameter="menufecturer" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="LifeYear" Parameter="lifeYear" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DepreciationPercentage" Parameter="depreciationPercentage" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_yrDtl" Method="sp_yrDtl">
+    <Parameter Name="Session_ID" Parameter="session_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_yrDtlResult">
+      <Column Name="DT1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DT2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DT3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DT4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="T1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="T2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblInvReqPurchaseMain_Insert" Method="sp_tblInvReqPurchaseMain_Insert">
+    <Parameter Name="EnterByEmpID" Parameter="enterByEmpID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToStoreID" Parameter="toStoreID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="StoreName" Parameter="storeName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="tblInvReqMainID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="tblInvReqNo" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblInvReqMainRFQ_Insert" Method="sp_tblInvReqMainRFQ_Insert">
+    <Parameter Name="EnterByEmpID" Parameter="enterByEmpID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToStoreID" Parameter="toStoreID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="StoreName" Parameter="storeName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="tblInvReqMainID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="tblInvReqNo" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="ParentID" Parameter="parentID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblInvReqMainPO_Insert" Method="sp_tblInvReqMainPO_Insert">
+    <Parameter Name="EnterByEmpID" Parameter="enterByEmpID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToStoreID" Parameter="toStoreID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="StoreName" Parameter="storeName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="tblInvReqMainID" Type="System.Decimal" DbType="Decimal(18,0)" Direction="InOut" />
+    <Parameter Name="tblInvReqNo" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="ParentID" Parameter="parentID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

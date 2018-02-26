@@ -1,0 +1,52 @@
+﻿.tAcHead{
+    font-weight:bold;
+    color:green;
+    background-color:floralwhite;width: 100%;font-size: 16px;
+}
+.tAcGroup{
+    font-weight:bold;
+     background-color:aliceblue;width: 100%;
+}
+.tAcSubG{
+    background-color:azure;width: 100%;
+}
+.tblAc {
+    width: 100%;
+}
+.Ac-Code{
+    width: 80px;border-bottom-style: solid; border-width: thin; border-color: #808080;
+}
+.AcCode:hover {
+    background: rgb(215, 215, 171);
+    cursor:pointer;
+}
+.Ac-Name{
+    width: 253px;border-bottom-style: solid; border-width: thin; border-color: #808080;
+}
+.oDr{
+width: 80px;border-bottom-style: solid; border-width: thin; border-color: #808080;text-align:right;
+}
+.oCr{
+    width: 80px;border-bottom-style: solid; border-width: thin; border-color: #808080;text-align:right;
+}
+.cDr{
+width: 80px;border-bottom-style: solid; border-width: thin; border-color: #808080;text-align:right;
+}
+.cCr{
+    width: 80px;border-bottom-style: solid; border-width: thin; border-color: #808080;text-align:right;
+}
+.tDr{
+width: 80px;border-bottom-style: solid; border-width: thin; border-color: #808080;text-align:right;
+}
+.tCr{
+    width: 80px;border-bottom-style: solid; border-width: thin; border-color: #808080;text-align:right;
+}.xhead{
+    width: 337px;border-bottom-style: solid; border-width: thin; border-color: #808080;text-align:left;
+}
+ .Ac-Name2 {
+width: 253px;
+border-bottom-style: solid;
+border-width: thin;
+border-color: #808080;
+font-size: 14px;
+}
